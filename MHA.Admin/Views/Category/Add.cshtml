@@ -1,0 +1,47 @@
+﻿@model MHA.Data.Domain.Category
+@{
+    ViewBag.Title = "Kategori Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <!-- Basic form -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <header class="panel-heading">@ViewBag.Title</header>
+                <div class="panel-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Üst Kategori</label>
+                            @Html.DropDownListFor(model => model.Id, new SelectList(ViewBag.Category, "Id", "CategoryName"), ("Seçiniz"), new { @class = "form-control", id = "ParentId" })
+
+                        </div>
+                        <div class="form-group">
+                            <label for="text">Kategori Adı</label>
+                            <input type="text" class="form-control" id="CategoryName" name="CategoryName" placeholder="Kategori Adı Yaz" required="required">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="text">Kategori URL</label>
+                            <input type="text" class="form-control" id="URL" name="URL" placeholder="URL">
+                        </div>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked id="activeCategory" name="IsActived"> Aktif Mi?
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default" onclick="AddCategory()">Kaydet</button>
+                        </div>
+                        @*<a href="#"class="btn btn-default" onclick="AddCategory()" >Kaydet</a>*@
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
