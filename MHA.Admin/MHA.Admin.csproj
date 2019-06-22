@@ -442,6 +442,7 @@
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\Global.js" />
     <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\notify.js" />
     <Content Include="Scripts\page-bootstrap.js" />
     <Content Include="Scripts\page-calendar.js" />
     <Content Include="Scripts\page-charts.js" />
@@ -523,6 +524,8 @@
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\News\Add.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\News\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -9,10 +9,10 @@
         url: "Add/Category",
         data: Category,
         type: "Post",
-        dataType:'json',
+        dataType: 'json',
         success: function (response) {
             if (response.Success) {
-                
+
                 bootbox.alert(response.Message, function () {
                     location.reload();
                 });
@@ -26,32 +26,32 @@
     })
 }
 
-function CategoryDelete() {
-    var returnId = $("#CategoryDelete").attr("data-id");
 
+$(document).on("click", "#CategoryDelete", function () {
+    var returnId = $(this).attr("data-id");
+    var deleteRow = $(this).closest("tr");
+    alert(returnId)
     $.ajax({
         url: '/Category/Delete/' + returnId,
+        //data: {
+
+        //    id= returnId,
+        //}, 
         type: "POST",
         dataType: 'json',
         success: function (response) {
-            if (response.Success) {
-                bootbox.alert(response.Message, function () {
-                    location.reload();
-                })
 
-            }
-            else {
-                bootbox.alert(response.Message, function () {
-                    //geri döndüğünde yaptırılacak işlemler
-                })
-            }
+            deleteRow.remove();
         }
     })
 
-}
+
+});
+
+
 
 function EditCategory() {
-  
+
     Category = new Object();
     Category.CategoryName = $("#CategoryName").val();
     Category.URL = $("#URL").val();
@@ -64,7 +64,7 @@ function EditCategory() {
         type: "Post",
         dataType: 'json',
         success: function (response) {
-          
+
             if (response.Success) {
 
                 bootbox.alert(response.Message, function () {
@@ -80,3 +80,4 @@ function EditCategory() {
     })
 
 }
+

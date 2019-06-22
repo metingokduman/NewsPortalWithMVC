@@ -1,0 +1,101 @@
+﻿@model MHA.Data.Domain.News
+
+@{
+    ViewBag.Title = "Haber Düzenle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "News", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+
+
+    <script src="~/ckeditor/ckeditor.js"></script>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <header class="panel-heading">@ViewBag.Title</header>
+                <div class="panel-body">
+                    @Html.HiddenFor(x => x.Id)
+                    <form role="form" method="post">
+
+                        <div class="form-group">
+                            <label for="Category">Kategori</label>
+                            @Html.DropDownListFor(model => model.CategoryId, new SelectList(ViewBag.Category, "Id", "CategoryName"), ("Seçiniz"), new { @class = "form-control" })
+
+
+                        </div>
+                        <div class="form-group">
+                            <label for="text">Haber Başlığı</label>
+                            @Html.TextBoxFor(x => x.NewsHeader, new { @class = "form-control", id = "NewsHeader" ,name= "NewsHeader",
+                           placeholder = "haber başlığı"
+                       })
+                            @*<input type="text" class="form-control" id="CategoryName" name="CategoryName" placeholder="Kategori Adı Yaz" required="required">*@
+                        </div>
+
+                        <div class="form-group">
+                            <label for="text">Kısa Açıklama</label>
+                            @*@Html.TextBoxFor(x => x.NewsSmallContent, new { @class = "form-control", id = "NewsSmallContent", name = "NewsSmallContent", placeholder = "Kısa Açıklama" })*@
+                            @Html.TextArea("NewsSmallContent")
+                            <script type="text/javascript">
+
+                                var editor = CKEDITOR.instances['NewsSmallContent'];
+                                if (editor) { editor.destroy(true); }
+                                CKEDITOR.replace('NewsSmallContent', { enterMode: CKEDITOR.ENTER_BR, });
+                            </script>
+                        </div>
+                        <div class="form-group">
+                            <label for="text">Açıklama</label>
+                            @Html.TextArea("NewsContent")
+                            <script type="text/javascript">
+
+                                var editor = CKEDITOR.instances['NewsContent'];
+                                if (editor) { editor.destroy(true); }
+                                CKEDITOR.replace('NewsContent', { enterMode: CKEDITOR.ENTER_BR, });
+                            </script>
+                            @*@Html.TextBoxFor(x => x.NewsContent, new { @class = "form-control", id = "NewsContent", name = "NewsContent", placeholder = "Açıklama" })*@
+
+                        </div>
+                        <div class="form-group">
+                            <label for="text">Vitrin Resim</label>
+                            <input type="file" name="ImageVit" accept="image/*" class="form-control" />
+                            <img src="@Model.Image" alt="eski resim"style="width:100px" />
+                            @*<input type="text" class="form-control" id="URL" name="URL" placeholder="URL">*@
+                        </div>
+                        <div class="form-group">
+                            <label for="text">Haber Resimleri</label>
+                            <input type="file" name="ImageList" accept="image/*" class="form-control" multiple />
+                            @foreach (var item in Model.NewsImage.Where(x=>x.NewsId==Model.Id))
+                            {
+                                <img src = "@item.NewsImage" alt = "eski resimLER"style = "width:100px" />
+                            }
+                            @*<input type="text" class="form-control" id="URL" name="URL" placeholder="URL">*@
+                        </div>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked id="activeNews" name="IsActived"> Aktif Mi?
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            @*<a href="#"class="btn btn-default" onclick="AddCategory()" >Kaydet</a>*@
+                            <button type="submit" class="btn btn-default">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+
+
+
+

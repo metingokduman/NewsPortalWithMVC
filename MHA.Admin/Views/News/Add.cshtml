@@ -21,11 +21,12 @@
             <div class="panel panel-default">
                 <header class="panel-heading">@ViewBag.Title</header>
                 <div class="panel-body">
-                    @*@Html.HiddenFor(x => x.Id)*@
+                    @Html.HiddenFor(x => x.Id)
                     <form role="form" method="post">
+
                         <div class="form-group">
                             <label for="Category">Kategori</label>
-                            @Html.DropDownListFor(model => model.CategoryId, new SelectList(ViewBag.Category, "Id", "CategoryName"), ("Seçiniz"), new { @class = "form-control", id = "ParentId" })
+                            @Html.DropDownListFor(model=>model.CategoryId, new SelectList(ViewBag.Category2, "Id", "CategoryName"), ("Seçiniz"), new { @class = "form-control" })
 
 
                         </div>

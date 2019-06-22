@@ -110,6 +110,7 @@ namespace MHA.Admin.Controllers
         //    }
         //    return RedirectToAction("Index","Category");
         //}
+        [HttpPost]
         public JsonResult Delete(int id)
         {
             var category = _categoryRepository.GetById(id);

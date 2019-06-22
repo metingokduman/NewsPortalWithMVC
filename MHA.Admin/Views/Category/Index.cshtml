@@ -32,36 +32,38 @@
                                     <tr>
                                         <td><span class="label label-success">@item.Id</span></td>
                                         <td>@item.CategoryName</td>
-                                        <td>@foreach (var üstcategory in Model.Where(x=>x.Id==item.ParentId))
+                                        <td>
+                                            @foreach (var üstcategory in Model.Where(x => x.Id == item.ParentId))
+                                            {
+                                                <span>@üstcategory.CategoryName</span>
+                                            }
+                                    </td>
+                                    <td>
+                                        @if (item.IsActived == true)
                                         {
-                                            <span>@üstcategory.CategoryName</span>
-                                        }</td>
-                                        <td>
-                                            @if (item.IsActived == true)
-                                            {
-                                                <b class="label label-success">Aktif </b>
-                                            }
-                                            else
-                                            {
-                                                <b class="label label-danger">Passive </b>
-                                            }
-                                        </td>
-                                       
-                                        <td>
-                                            @*<button class="btn btn-default btn-sm">Düzenle</button>*@
-                                            <a href="@Url.Action("Edit","Category",new {Id=item.Id })" class="btn btn-default btn-sm">Düzenle</a>
-                                            @*@Html.ActionLink("Delete", "Delete", new {id=item.Id },new { onclick="return confirm('Are you sure to want to delete this row?')"})*@
-                                            <button class="btn btn-default btn-sm" id="CategoryDelete" onclick="CategoryDelete()" data-id="@item.Id">Sil</button>
-                                        </td>
-                                    </tr>
-                                }
+                                            <b class="label label-success">Aktif </b>
+                                        }
+                                        else
+                                        {
+                                            <b class="label label-danger">Passive </b>
+                                        }
+                                    </td>
+
+                                    <td>
+                                        @*<button class="btn btn-default btn-sm">Düzenle</button>*@
+                                        <a href="@Url.Action("Edit","Category",new {Id=item.Id })" class="btn btn-default btn-sm">Düzenle</a>
+                                        @*@Html.ActionLink("Delete", "Delete", new {id=item.Id },new { onclick="return confirm('Are you sure to want to delete this row?')"})*@
+                                        <button class="btn btn-default btn-sm" id="CategoryDelete" data-id="@item.Id">Sil</button>
+                                    </td>
+                                </tr>
+                            }
 
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-            @Html.PagedListPager(Model, Page=>Url.Action("Index",new { Page}),PagedListRenderOptions.Classic)
+            @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }), PagedListRenderOptions.Classic)
         </div>
         <!-- /Responsive table -->
     </div>
