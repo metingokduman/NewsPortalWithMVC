@@ -26,6 +26,8 @@ namespace MHA.Admin.Class
             builder.RegisterType<AppUserRepository>().As<IAppUserRepository>();
             builder.RegisterType<RoleRepository>().As<IRoleRepository>();
             builder.RegisterType<CategoryRepository>().As<ICategoryRepository>();
+            builder.RegisterType<TagRepository>().As<ITagRepository>();
+            builder.RegisterType<SliderRepository>().As<ISliderRepository>();
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
 
             var container = builder.Build();

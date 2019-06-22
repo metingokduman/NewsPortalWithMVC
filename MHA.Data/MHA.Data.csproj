@@ -56,6 +56,8 @@
     <Compile Include="Domain\Image.cs" />
     <Compile Include="Domain\News.cs" />
     <Compile Include="Domain\Role.cs" />
+    <Compile Include="Domain\Slider.cs" />
+    <Compile Include="Domain\Tag.cs" />
     <Compile Include="Migrations\201906170920540_firs.cs" />
     <Compile Include="Migrations\201906170920540_firs.Designer.cs">
       <DependentUpon>201906170920540_firs.cs</DependentUpon>

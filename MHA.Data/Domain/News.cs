@@ -30,5 +30,8 @@ namespace MHA.Data.Domain
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
+
+        
+        public virtual ICollection<Tag> Tag { get; set; }
     }
 }

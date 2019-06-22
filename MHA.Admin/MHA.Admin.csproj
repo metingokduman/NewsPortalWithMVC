@@ -423,6 +423,7 @@
     <Content Include="ckeditor\skins\moono-lisa\images\spinner.gif" />
     <Content Include="ckeditor\styles.js" />
     <Content Include="ckeditor\vendor\promise.js" />
+    <Content Include="Content\bootstrap-tagsinput.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\icheck\minimal%402x.png" />
@@ -432,6 +433,7 @@
     <Content Include="Content\main.min.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\plugins.min.css" />
+    <Content Include="Content\sweetalert2.css" />
     <Content Include="Content\typicons.min.css" />
     <Content Include="fonts\fontawesome-webfontba72.svg" />
     <Content Include="fonts\footable.svg" />
@@ -440,7 +442,10 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootbox.js" />
     <Content Include="Scripts\bootbox.min.js" />
+    <Content Include="Scripts\bootstrap-tagsinput-angular.js" />
+    <Content Include="Scripts\bootstrap-tagsinput.js" />
     <Content Include="Scripts\Global.js" />
+    <Content Include="Scripts\jquery.form.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\notify.js" />
     <Content Include="Scripts\page-bootstrap.js" />
@@ -466,6 +471,7 @@
     <Content Include="Scripts\plugins\rickshaw\rickshaw.min.js" />
     <Content Include="Scripts\plugins\sparkline.min.js" />
     <Content Include="Scripts\plugins\summernote.min.js" />
+    <Content Include="Scripts\sweetalert2.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -476,10 +482,12 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\SliderController.cs" />
     <Compile Include="CustomFilter\LoginFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\ImageUpload.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -526,6 +534,9 @@
     <Content Include="Views\News\Add.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\News\Edit.cshtml" />
+    <Content Include="Views\Slider\Index.cshtml" />
+    <Content Include="Views\Slider\Add.cshtml" />
+    <Content Include="Views\Slider\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -536,6 +547,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\External\NewsPic\" />
+    <Folder Include="Content\External\Slider\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

@@ -12,3 +12,17 @@ C:\Users\gokduman\source\repos\MHA\MHA.Data\obj\Debug\MHA.Data.dll
 C:\Users\gokduman\source\repos\MHA\MHA.Data\obj\Debug\MHA.Data.pdb
 C:\Users\gokduman\source\repos\MHA\MHA.Data\obj\Debug\MHA.Data.Migrations.firs.resources
 C:\Users\gokduman\source\repos\MHA\MHA.Data\obj\Debug\MHA.Data.csproj.GenerateResource.cache
+C:\Users\gokduman\source\repos\MHA\NewsPortalWithMVC\MHA.Data\bin\Debug\MHA.Data.dll.config
+C:\Users\gokduman\source\repos\MHA\NewsPortalWithMVC\MHA.Data\bin\Debug\MHA.Data.dll
+C:\Users\gokduman\source\repos\MHA\NewsPortalWithMVC\MHA.Data\bin\Debug\MHA.Data.pdb
+C:\Users\gokduman\source\repos\MHA\NewsPortalWithMVC\MHA.Data\bin\Debug\EntityFramework.dll
+C:\Users\gokduman\source\repos\MHA\NewsPortalWithMVC\MHA.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\gokduman\source\repos\MHA\NewsPortalWithMVC\MHA.Data\bin\Debug\EntityFramework.xml
+C:\Users\gokduman\source\repos\MHA\NewsPortalWithMVC\MHA.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\gokduman\source\repos\MHA\NewsPortalWithMVC\MHA.Data\obj\Debug\MHA.Data.csprojAssemblyReference.cache
+C:\Users\gokduman\source\repos\MHA\NewsPortalWithMVC\MHA.Data\obj\Debug\MHA.Data.Migrations.firs.resources
+C:\Users\gokduman\source\repos\MHA\NewsPortalWithMVC\MHA.Data\obj\Debug\MHA.Data.csproj.GenerateResource.cache
+C:\Users\gokduman\source\repos\MHA\NewsPortalWithMVC\MHA.Data\obj\Debug\MHA.Data.csproj.CoreCompileInputs.cache
+C:\Users\gokduman\source\repos\MHA\NewsPortalWithMVC\MHA.Data\obj\Debug\MHA.Data.csproj.CopyComplete
+C:\Users\gokduman\source\repos\MHA\NewsPortalWithMVC\MHA.Data\obj\Debug\MHA.Data.dll
+C:\Users\gokduman\source\repos\MHA\NewsPortalWithMVC\MHA.Data\obj\Debug\MHA.Data.pdb

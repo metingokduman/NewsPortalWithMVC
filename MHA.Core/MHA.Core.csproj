@@ -56,11 +56,15 @@
     <Compile Include="Repository\Contract\INewsRepository.cs" />
     <Compile Include="Repository\Contract\IRepository.cs" />
     <Compile Include="Repository\Contract\IRoleRepository.cs" />
+    <Compile Include="Repository\Contract\ISliderRepository.cs" />
+    <Compile Include="Repository\Contract\ITagRepository.cs" />
     <Compile Include="Repository\Contrete\AppUserRepository.cs" />
     <Compile Include="Repository\Contrete\CategoryRepository.cs" />
     <Compile Include="Repository\Contrete\ImageRepository.cs" />
     <Compile Include="Repository\Contrete\NewsRepository.cs" />
     <Compile Include="Repository\Contrete\RoleRepository.cs" />
+    <Compile Include="Repository\Contrete\SliderRepository.cs" />
+    <Compile Include="Repository\Contrete\TagRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MHA.Data\MHA.Data.csproj">

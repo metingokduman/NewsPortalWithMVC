@@ -17,14 +17,17 @@ namespace MHA.Admin.Controllers
         private readonly ICategoryRepository _categoryRepository;
         private readonly IAppUserRepository _appUserRepository;
         private readonly IImageRepository _imageRepository;
+        private readonly ITagRepository _tagRepository;
+
         
        
-        public NewsController(INewsRepository newsRepository,ICategoryRepository categoryRepository,IAppUserRepository appUserRepository, IImageRepository imageRepository)
+        public NewsController(INewsRepository newsRepository,ICategoryRepository categoryRepository,IAppUserRepository appUserRepository, IImageRepository imageRepository,ITagRepository tagRepository)
         {
             _newsRepository = newsRepository;
             _categoryRepository = categoryRepository;
             _appUserRepository = appUserRepository;
             _imageRepository = imageRepository;
+            _tagRepository = tagRepository;
         }
         // GET: News
         [LoginFilter]
@@ -47,7 +50,7 @@ namespace MHA.Admin.Controllers
 
         [HttpPost]
         [LoginFilter]
-        public ActionResult Add(News news,HttpPostedFileBase ImageVit,IEnumerable<HttpPostedFileBase> ImageList)
+        public ActionResult Add(News news,HttpPostedFileBase ImageVit,IEnumerable<HttpPostedFileBase> ImageList,string tag)
         {
             var sessionControl = HttpContext.Session["AppUserEmail"];
             if (news==null)
@@ -66,10 +69,13 @@ namespace MHA.Admin.Controllers
                 }
                 AppUser appUser = _appUserRepository.GetByEmail(sessionControl.ToString());
                 news.UserId = appUser.Id;
-
-
+                
                 _newsRepository.Insert(news);
                 _newsRepository.Save();
+
+
+
+                _tagRepository.AddTag(news.Id, tag);
 
                 string ListOfPic= System.IO.Path.GetExtension(Request.Files[1].FileName);
                 if (ImageList!=null)

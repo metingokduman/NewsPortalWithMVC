@@ -1,0 +1,120 @@
+﻿@model MHA.Data.Domain.Slider
+
+@{
+    ViewBag.Title = "Slider Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/ckeditor/ckeditor.js"></script>
+<style>
+    .bootstrap-tagsinput {
+        width: 100%
+    }
+</style>
+@using (Html.BeginForm("Add", "Slider", FormMethod.Post, new { enctype = "multipart/form-data" ,id="SliderForm"}))
+
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+
+
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <header class="panel-heading">@ViewBag.Title</header>
+                <div class="panel-body">
+                    @Html.HiddenFor(x => x.Id)
+                    <form role="form" method="post">
+
+                        @*<div class="form-group">
+            <label for="Category">Kategori</label>
+            @Html.DropDownListFor(model => model.CategoryId, new SelectList(ViewBag.Category2, "Id", "CategoryName"), ("Seçiniz"), new { @class = "form-control" })
+
+
+        </div>*@
+                        <div class="form-group">
+                            <label for="text">Başlık</label>
+                            @Html.TextBoxFor(x => x.SliderHeader, new { @class = "form-control", id = "SliderHeader",
+                           name= "SliderHeader",
+                           placeholder = "slider başlığı"
+                       })
+                          
+                        </div>
+
+                        <div class="form-group">
+                            <label for="text">URL</label>
+                            @Html.TextBoxFor(x => x.SliderURL, new { @class = "form-control", id = "SliderURL",
+                           name= "SliderURL",
+                           placeholder = "slider URL"
+                       })
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label for="text">Açıklama</label>
+                            @Html.TextArea("SliderContent")
+                            <script type="text/javascript">
+
+                                var editor = CKEDITOR.instances['SliderContent'];
+                                if (editor) { editor.destroy(true); }
+                                CKEDITOR.replace('SliderContent', { enterMode: CKEDITOR.ENTER_BR, });
+                            </script>
+                            @*@Html.TextBoxFor(x => x.NewsContent, new { @class = "form-control", id = "NewsContent", name = "NewsContent", placeholder = "Açıklama" })*@
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="text">Resim</label>
+                            <input type="file" name="SliderImage" accept="image/*" class="form-control" />
+                            @*<input type="text" class="form-control" id="URL" name="URL" placeholder="URL">*@
+                        </div>
+
+
+                        <div class="checkbox">
+                            <label>
+                                @Html.CheckBoxFor(x => x.IsActived, new { @checked = "checked", id = "sliderActive" }) Aktif mi?
+                                <input type="checkbox" checked id="sliderActive" name="IsActived"> Aktif Mi?
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            @*<a href="#"class="btn btn-default" onclick="AddCategory()" >Kaydet</a>*@
+                            <button type="submit" class="btn btn-default" id="AddSlider">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+    <script>
+        $(document).ready(function () {
+            $(document).on("click", "#AddSlider", function () {
+                $("#SliderForm").ajaxForm({
+                    success: function (response) {
+                        if (response.Success) {
+
+                            bootbox.alert(response.Message, function () {
+                                location.reload();
+                            });
+                        }
+                        else {
+                            bootbox.alert(response.Message, function () {
+                                //geri döndüğünde birşey yapılması isteniyorsa buraya yazılır
+                            });
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+
+
+
+
+
+
