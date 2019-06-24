@@ -60,5 +60,10 @@ namespace MHA.Core.Repository.Contrete
             {
                 _context.SaveChanges();
             }
+
+        public Category GetFirst()
+        {
+            return _context.Category.First();
         }
+    }
 }

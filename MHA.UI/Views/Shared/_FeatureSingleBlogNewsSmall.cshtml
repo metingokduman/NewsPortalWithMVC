@@ -1,0 +1,35 @@
+﻿@model MHA.UI.Models.NewsCategoryViewModel
+
+@foreach (var item in Model.News)
+{
+    <div class="col-12 col-lg-5">
+        <!-- Single Featured Post -->
+        <div class="single-blog-post featured-post-2">
+            <div class="post-thumb">
+                <a href="#"><img src="@item.Image" alt=""></a>
+            </div>
+            <div class="post-data">
+                <a href="#" class="post-catagory">@item.Category.CategoryName</a>
+                <div class="post-meta">
+                    <a href="#" class="post-title">
+                        <h6>@item.NewsSmallContent</h6>
+                    </a>
+                    <!-- Post Like & Post Comment -->
+                    <div class="d-flex align-items-center">
+                        <table>
+
+                            <tr>
+                                @foreach (var tag in @item.Tag)
+                                {
+                                    <td>#@tag.TagName</td>
+                                }
+
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

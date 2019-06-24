@@ -63,6 +63,9 @@ namespace MHA.Core.Repository.Contrete
             _context.SaveChanges();
         }
 
-        
+        public IQueryable<News> GetManyDistinct()
+        {
+            return _context.News.OrderBy(x => x.CategoryId).Distinct();
+        }
     }
 }

@@ -1,0 +1,29 @@
+﻿@model MHA.UI.Models.NewsCategoryViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-12 col-md-6 col-lg-8">
+    <div class="row">
+        @{
+            Html.RenderPartial("_FeatureSingleBlogNewsBig", Model);
+        }
+        @*@Html.Partial("_FeatureSingleBlogNewsBig", Model)*@
+        
+    </div>
+</div>
+
+<!-- ##### küçük fotoğraflı haber ##### -->
+<div class="col-12 col-md-6 col-lg-4">
+    <!-- Single Featured Post -->
+
+
+    @Html.Partial("_RandomCategorySmallNews", Model)
+
+
+
+
+    <!-- Single Featured Post -->
+
+</div>

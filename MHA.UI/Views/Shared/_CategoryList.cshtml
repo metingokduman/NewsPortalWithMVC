@@ -1,0 +1,10 @@
+﻿@model MHA.UI.Models.NewsCategoryViewModel
+
+<ul >
+    @foreach (var item in Model.Category)
+    {
+        <li class="active"id="filterCategory"><a href="@Url.Action("NewsFilter","Home",new {Id=item.Id })">@item.CategoryName</a></li>
+    }
+
+</ul>
+

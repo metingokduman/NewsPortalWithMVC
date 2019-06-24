@@ -1,0 +1,19 @@
+﻿@model MHA.UI.Models.NewsCategoryViewModel
+
+@foreach (var item in Model.NewsDistinct)
+{
+<div class="single-blog-post small-featured-post d-flex">
+    <div class="post-thumb">
+        <a href="#"><img src=".././@item.Image" alt=""></a>
+    </div>
+    <div class="post-data">
+        <a href="#" class="post-catagory">@item.Category.CategoryName</a>
+        <div class="post-meta">
+            <a href="#" class="post-title">
+                <h6>@item.NewsHeader</h6>
+            </a>
+            @*<p class="post-date"><span>@item.CreatedTime.Hour</span> | <span>@item.CreatedTime.Month</span>| <span>@item.CreatedTime.Year</span></p>*@
+        </div>
+    </div>
+</div>
+        }
